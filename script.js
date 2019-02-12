@@ -1,30 +1,57 @@
+// let cheerio = require('cheerio');
+// let jsonframe = require('jsonframe-cheerio');
+// let got  = require('got');
+//
+//
+//
 const cheerio = require('cheerio')
 const jsonframe = require('jsonframe-cheerio')
 const got = require('got');
 
 
 async function scrapCoinmarketCap() {
-    const url = 'https://coinmarketcap.com/all/views/all/'
+    const url = 'http://localhost:8000/'
     const html = await got(url)
     const $ = cheerio.load(html.body)
 
     jsonframe($) // initializing the plugin
 
     let frame = {
-    currency: {
-      _s: "tr",  // the selector
-      _d: [{  // allow you to get an array of data, not just the first item
-        "Coin": "td.no-wrap.currency-name > a",
-        "Url": "td.no-wrap.currency-name > a @ href",
-        "Symbol": "td.text-left.col-symbol",
-        "Price": "td:nth-child(5) > a"
-      }]
-    }
-  }
+    	companies: {           // setting the parent item as "companies"
+    		_s: ".item",    // defines the elements to search for
+    		_d: [{              // "data": [{}] defines a list of items
+    			name: ".header [itemprop=name]",          // inline selector defining "name" so "company"."name"
+    			description: ".header [rel=description]", // inline selector defining "description" as "company"."description"
+    			url: {                                    // defining "url" by an attribute with "attr" and "selector" in an object
+    				_s: ".header [itemprop=name]",      // is actually the same as the inline selector
+    				attr: "href"                              // the attribute name to retrieve
+    			},
+    			contact: {                                // set up a parent "contact" element as "company"."contact"
+    				_s: ".contact",                 // defines the element to search for
+    				_d: {                               // defines the data which "contact" will contain
+    					telephone: {                          // using "type" to use "telephone" parser to extract only the telephone
+    						_s: "[itemprop=telephone]",     // simple selector for "telephone"
+    						type: "telephone"                     // using "telephone" plugin parser
+    					},
+    					employee: {                           // setting a parent node "employee" as "company"."contact"."employee"
+    						name: "[itemprop=employeeName]",          // inline selector defining "name"
+    						jobTitle: "[itemprop=employeeJobTitle]",  // inline selector defining "jobtitle"
+    						email: {                          // using "type" to use "email" parser to extract only the email
+    							_s: "[itemprop=email]",     // simple selector for "email"
+    							type: "email"                     // using "email" plugin parser
+    						}
+    					}
+    				}
+    			}
+    		}]
+    	}
 
-  console.log($('body').scrape(frame, {
-    string: true
-  }))
+    };
+
+
+    console.log($('.list.items').scrape(frame, {
+        string: true
+    }))
 }
 
 scrapCoinmarketCap()
