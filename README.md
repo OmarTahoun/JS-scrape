@@ -27,3 +27,28 @@ Scraping example with JavaScript
         - name: [itemprop=employeeName]
         - jobTitle: [itemprop = employeeJobTitle]
         - email: [itemprop=email]
+## OUPUT
+```JSON
+{
+  "companies": [
+    {
+      "name": "Tessera",
+      "contact": {
+        "employee": {
+          "name": "Mike Layn",
+          "jobTitle": "Marketing Assistant"
+        }
+      }
+    },
+    {
+      "name": "Marcox",
+      "contact": {
+        "employee": {
+          "name": "Jake Kannegan",
+          "jobTitle": "Owner"
+        }
+      }
+    }
+  ]
+}
+```
