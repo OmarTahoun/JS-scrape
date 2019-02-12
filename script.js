@@ -11,15 +11,20 @@ async function scrapCoinmarketCap() {
     jsonframe($) // initializing the plugin
 
     let frame = {
+    currency: {
+      _s: "tr",  // the selector
+      _d: [{  // allow you to get an array of data, not just the first item
         "Coin": "td.no-wrap.currency-name > a",
-        "url": "td.no-wrap.currency-name > a @ href",
+        "Url": "td.no-wrap.currency-name > a @ href",
         "Symbol": "td.text-left.col-symbol",
-        "Price": "td:nth-child(5) > a",
+        "Price": "td:nth-child(5) > a"
+      }]
     }
+  }
 
-    console.log($('body').scrape(frame, {
-        string: true
-    }))
+  console.log($('body').scrape(frame, {
+    string: true
+  }))
 }
 
 scrapCoinmarketCap()
