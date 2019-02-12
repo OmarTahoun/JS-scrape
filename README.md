@@ -27,6 +27,7 @@ Scraping example with JavaScript
         - name: [itemprop=employeeName]
         - jobTitle: [itemprop = employeeJobTitle]
         - email: [itemprop=email]
+        
 ## OUPUT
 ```JSON
 {
