@@ -1,15 +1,9 @@
-// let cheerio = require('cheerio');
-// let jsonframe = require('jsonframe-cheerio');
-// let got  = require('got');
-//
-//
-//
 const cheerio = require('cheerio')
 const jsonframe = require('jsonframe-cheerio')
 const got = require('got');
 
 
-async function scrapCoinmarketCap() {
+async function scrapsite() {
     const url = 'http://localhost:8000/'
     const html = await got(url)
     const $ = cheerio.load(html.body)
@@ -54,4 +48,4 @@ async function scrapCoinmarketCap() {
     }))
 }
 
-scrapCoinmarketCap()
+scrapsite()
