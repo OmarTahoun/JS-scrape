@@ -1,16 +1,14 @@
 # JS-scrape
-Scraping example with JavaScript
+### Scraping with JavaScript
+#### Scraping the questions on stackoverflow.
 
-### Learning how to scrape HTML using JS i am following [this](https://medium.com/data-scraper-tips-tricks/scraping-data-with-javascript-in-3-minutes-8a7cf8275b31)
 
 
 ## Data format needed
 - question
   - question title
   - description
-  - status
-  - user
-    - user name:
+
 ## Selectors wanted for the scraper
 - question: "#mainbar #questions .question-summary"
   - question-title: ".summary h3"
