@@ -12,9 +12,9 @@ Scraping example with JavaScript
   - user
     - user name:
 ## Selectors wanted for the scraper
-- question: #mainbar #questions .question-summary
-  - question-title: .summary h3
-  - description: .summary .excerpt
+- question: "#mainbar #questions .question-summary"
+  - question-title: ".summary h3"
+  - description: ".summary .excerpt"
 
 
 ## OUPUT
