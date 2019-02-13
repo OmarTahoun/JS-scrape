@@ -5,29 +5,18 @@ Scraping example with JavaScript
 
 
 ## Data format needed
-- company
-  - name
+- question
+  - question title
   - description
-  - url
-  - contact
-    - telephone
-    - employee
-        - name
-        - jobTitle
-        - email
-
+  - status
+  - user
+    - user name:
 ## Selectors wanted for the scraper
-- company: .List.items .item
-  - name:  .header [itemprop = name]
-  - description: .header [rel="description"]
-  - url: .header [itemprop = name] a
-  - contact: .contact
-    - telephone: [itemprop=telephone]
-    - employee
-        - name: [itemprop=employeeName]
-        - jobTitle: [itemprop = employeeJobTitle]
-        - email: [itemprop=email]
-        
+- question: #mainbar #questions .question-summary
+  - question-title: .summary h3
+  - description: .summary .excerpt
+
+
 ## OUPUT
 ```JSON
 {
