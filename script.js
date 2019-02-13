@@ -4,14 +4,14 @@ const got = require('got');
 
 
 async function scrapsite() {
-    const url = 'http://localhost:8000/'
+    const url = 'https://stackoverflow.com/questions?pagesize=50&sort=newest/'
     const html = await got(url)
     const $ = cheerio.load(html.body)
 
     jsonframe($) // initializing the plugin
 
     let frame = {
-    	companies: {
+    	Questions: {
     		_s: ".question-summary",
     		_d: [{
     			title: ".summary h3",
