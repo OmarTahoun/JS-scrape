@@ -39,7 +39,12 @@
       "title": "What ML techniques are there for discrete strategic decision problems?",
       "description": "My training in AI, machine learning, neural networks, etc, is a couple of decades out of date. The only ML techniques I know about apply to fairly simple, fixed-sized problems. I'm interested in ..."
     },
-    {"More"}
+    {".
+      .
+      .
+      .
+      .
+      "}
   ]
 }
 
