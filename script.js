@@ -15,6 +15,7 @@ async function scrapsite() {
     		_s: ".col-12.d-block.width-full.py-4.border-bottom",
     		_d: [{
     			name: "h3",
+    			url: "h3 > a @ href",
     			description: ".py-1 p",
     			programming_Language: ".f6.text-gray.mt-2 .d-inline-block.mr-3 [itemprop=programmingLanguage]" ,
           stars: ".f6.text-gray.mt-2 a"
