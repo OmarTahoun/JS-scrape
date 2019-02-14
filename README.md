@@ -3,7 +3,6 @@
 #### Scraping the trending repos  on GitHub.
 
 
-
 ## Data format needed
 - name
 - description
@@ -18,6 +17,12 @@
 - programming Language: ".f6.text-gray.mt-2 .d-inline-block.mr-3 [itemprop=programmingLanguage]"
 
 - stars: ".f6.text-gray.mt-2 a"
+
+
+## Set the time frame.
+```JS
+const keyword = 'monthly'
+```
 
 
 ## OUPUT
