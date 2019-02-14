@@ -14,7 +14,7 @@ async function scrapsite() {
     	Repositories: {
     		_s: ".col-12.d-block.width-full.py-4.border-bottom",
     		_d: [{
-    			name: "a",
+    			name: "h3",
     			description: ".py-1 p",
     			programming_Language: ".f6.text-gray.mt-2 .d-inline-block.mr-3 [itemprop=programmingLanguage]" ,
           stars: ".f6.text-gray.mt-2 a"
