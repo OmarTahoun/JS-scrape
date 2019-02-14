@@ -2,10 +2,10 @@
 const cheerio = require('cheerio')
 const jsonframe = require('jsonframe-cheerio')
 const got = require('got');
-const fs = require('fs');
+const keyword = 'monthly'
 
 async function scrapsite() {
-    const url = 'https://github.com/trending'
+    const url = 'https://github.com/trending?since='+keyword
     const html = await got(url) // Loading URL
     const $ = cheerio.load(html.body) //Getting html data
     jsonframe($) // initializing the plugin
